@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "032147f8-20b5-47be-8524-f54230bda833",
+		"name": "social-network-grupo-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "http://localhost:3000/api/account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"sergio1234@yopmail.com\",\n\t\"password\": \"sdfg\"\n}\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/account",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/account/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea44517f-efa6-4d62-8cc5-55ae476d413e",
+								"exec": [
+									"pm.enviroment.set(\"accessToken\", `Bearer ${pm.response.json().accessToken}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"sergio100@yopmail.com\",\n\t\"password\": \"sdfg\"\n}\n"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/account/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "http://localhost:3000/api/user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmUzZDdmOTMtNDhlOC00NmFjLWJjOTktZDI3MDQ2YzA1ZjY4IiwiaWF0IjoxNTU2Mzc5MzQxLCJleHAiOjE1NTY0NjU3NDF9.3JP6NzUJGInRxnrK5AS3oMsnjn0uj0zha2ZEVG6b_4s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmUzZDdmOTMtNDhlOC00NmFjLWJjOTktZDI3MDQ2YzA1ZjY4IiwiaWF0IjoxNTU2Mzc5MzQxLCJleHAiOjE1NTY0NjU3NDF9.3JP6NzUJGInRxnrK5AS3oMsnjn0uj0zha2ZEVG6b_4s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/user/post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMjgwY2U3ZWUtNGUwMC00NWZkLTk1ZGMtNDhlMjBkZDNlZWFhIiwiaWF0IjoxNTU2MzUxNDQ4LCJleHAiOjE1NTY0Mzc4NDh9.pS_0d8TQYioKN6PxncvJo5w78Hp_Qb-RYzI-S8ZPAGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"Buenas noches señora\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/post",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/user/avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmUzZDdmOTMtNDhlOC00NmFjLWJjOTktZDI3MDQ2YzA1ZjY4IiwiaWF0IjoxNTU2NDkxOTQ5LCJleHAiOjE1NTY1NzgzNDl9.oGEgHn-a4LjR_J0H83AKM21dBNsLFKxbp72U-AJ2tH4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/avatar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/api/user/wall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZmUzZDdmOTMtNDhlOC00NmFjLWJjOTktZDI3MDQ2YzA1ZjY4IiwiaWF0IjoxNTU2Mzc5MzQxLCJleHAiOjE1NTY0NjU3NDF9.3JP6NzUJGInRxnrK5AS3oMsnjn0uj0zha2ZEVG6b_4s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"Buenas noches\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/wall",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"wall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseURL}}/api/user/friendrequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/friendrequest",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"friendrequest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
