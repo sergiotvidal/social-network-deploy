@@ -39,6 +39,14 @@ app.use((req, res, next) => {
   next();
 });
 
+process.on('uncaughtException', (err) => {
+  console.error('excepción inesperada', err.message, err);
+});
+
+process.on('unhandledRejection', (err) => {
+  console.error('Error inesperado', err.message, err);
+});
+
 app.use((err, req, res ,next) => {
   console.error(err);
   res.status(400).send({
@@ -58,7 +66,7 @@ async function init() {
     process.exit(1);
   }
 
-  const port = 3000;
+  const port = process.env.PORT;
   app.listen(3000, () => {
     console.log(`Server running and listening at port ${port}`);
   });
