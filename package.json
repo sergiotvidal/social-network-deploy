@@ -1,10 +1,9 @@
 {
-  "name": "05.socialnetwork",
+  "name": "social-network-deploy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -36,5 +35,16 @@
   },
   "engines": {
     "node": "10.14.1"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiotvidal/social-network-deploy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sergiotvidal/social-network-deploy/issues"
+  },
+  "homepage": "https://github.com/sergiotvidal/social-network-deploy#readme"
 }
